@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import CheckList from './CheckList';
 
+// Name it UICard to avoid name conflict with current component
+import UICard from 'material-ui/lib/card/card';
+
+import CardHeader from 'material-ui/lib/card/card-header';
+import CardText from 'material-ui/lib/card/card-text';
+
 class Card extends Component {
   render() {
     return (
-      <div className="card">
-        <div className="card__title">{this.props.title}</div>
-        <div className="card__details">
+      <UICard>
+        <CardHeader title={this.props.title} />
+        <CardText>
           {this.props.description}
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
-        </div>
-      </div>
+        </CardText>
+      </UICard>
     );
   }
 }

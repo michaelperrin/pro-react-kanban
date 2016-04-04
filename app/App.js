@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
+
+// Necessary for Material UI before 1.0 gets released
+// See https://github.com/callemall/material-ui#react-tap-event-plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 import KanbanBoard from './KanbanBoard';
 
 let cardsList = [

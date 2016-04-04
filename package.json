@@ -4,7 +4,8 @@
   "description": "Testing React",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "build": "NODE_ENV=production webpack -p --progress --colors"
+    "build": "NODE_ENV=production webpack -p --progress --colors",
+    "webpack": "webpack -p --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,9 @@
     "webpack-dev-server": "~1.12.*"
   },
   "dependencies": {
+    "material-ui": "^0.15.0-alpha.2",
     "react": "~0.14.*",
-    "react-dom": "~0.14.*"
+    "react-dom": "~0.14.*",
+    "react-tap-event-plugin": "^0.2.2"
   }
 }
