@@ -9,6 +9,7 @@ class CheckList extends Component {
   render() {
     let tasks = this.props.tasks.map((task) => (
       <ListItem
+        key={task.id}
         leftCheckbox={<Checkbox defaultChecked={task.done} />}
         primaryText={task.name}
         rightIconButton={<a href="#" className="checklist__task--remove">Remove</a>}
