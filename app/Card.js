@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import CheckList from './CheckList';
-
-// Name it UICard to avoid name conflict with current component
-import UICard from 'material-ui/lib/card/card';
-
-import CardHeader from 'material-ui/lib/card/card-header';
-import CardText from 'material-ui/lib/card/card-text';
 import marked from 'marked';
 
 class Card extends Component {
@@ -16,14 +10,14 @@ class Card extends Component {
     }
 
     return (
-      <UICard>
-        <CardHeader title={this.props.title} />
-        <CardText>
+      <div className="card">
+        <h2>{this.props.title}</h2>
+        <div>
           <span dangerouslySetInnerHTML={createMarkup(this.props.description)} />
 
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
-        </CardText>
-      </UICard>
+        </div>
+      </div>
     );
   }
 }
