@@ -6,14 +6,21 @@ import UICard from 'material-ui/lib/card/card';
 
 import CardHeader from 'material-ui/lib/card/card-header';
 import CardText from 'material-ui/lib/card/card-text';
+import marked from 'marked';
 
 class Card extends Component {
   render() {
+    function createMarkup(text) {
+      // See https://facebook.github.io/react/tips/dangerously-set-inner-html.html
+      return {__html: marked(text)};
+    }
+
     return (
       <UICard>
         <CardHeader title={this.props.title} />
         <CardText>
-          {this.props.description}
+          <span dangerouslySetInnerHTML={createMarkup(this.props.description)} />
+
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
         </CardText>
       </UICard>
