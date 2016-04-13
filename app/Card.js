@@ -9,8 +9,15 @@ class Card extends Component {
       return {__html: marked(text)};
     }
 
+    // Test inline style
+    // See https://facebook.github.io/react/tips/inline-styles.html
+    var cardStyle = {
+      // CSS properties are camelCased
+      borderLeft: '3px solid ' + this.props.color
+    };
+
     return (
-      <div className="card">
+      <div className="card" style={cardStyle}>
         <h2>{this.props.title}</h2>
         <div>
           <span dangerouslySetInnerHTML={createMarkup(this.props.description)} />
