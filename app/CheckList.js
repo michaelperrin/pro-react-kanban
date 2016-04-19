@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Checkbox from 'material-ui/lib/checkbox';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import Subheader from 'material-ui/lib/Subheader';
-import FontIcon from 'material-ui/lib/font-icon';
+import Checkbox from 'material-ui/Checkbox';
+import {List, ListItem} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
 
 class CheckList extends Component {
   render() {
